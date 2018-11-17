@@ -9,6 +9,9 @@ import {AdicionarRefeicaoPage} from './adicionar-refeicao';
   imports: [
     IonicPageModule.forChild(AdicionarRefeicaoPage),
   ],
+  exports: [
+    AdicionarRefeicaoPage
+  ]
 })
 export class AdicionarRefeicaoPageModule {
 }

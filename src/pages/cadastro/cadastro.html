@@ -6,38 +6,55 @@
 
 <ion-content class="background">
   <br><br>
-  <div align="center">
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Nome" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Telefone" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Email" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Senha" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Idade" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Altura" class="input"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item class="inputAcesso">
-      <ion-input type="text" placeholder="Peso" class="input"></ion-input>
-    </ion-item>
-  </div>
+  <form [formGroup]="formGroup">
+    <div align="center">
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.nomePessoa" formControlName="nome"
+                   [class.invalido]="!formGroup.controls.nome.valid"
+                   type="text" placeholder="Nome" class="input"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.telefonePessoa" formControlName="telefone"
+                   [class.invalido]="!formGroup.controls.telefone.valid"
+                   type="text" placeholder="Telefone" class="input" mask="(99) 99999-9999"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.emailPessoa" formControlName="email"
+                   [class.invalido]="!formGroup.controls.email.valid"
+                   type="email" placeholder="Email" class="input"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.senhaPessoa" formControlName="senha"
+                   [class.invalido]="!formGroup.controls.senha.valid"
+                   type="password" placeholder="Senha" class="input"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.idadePessoa" formControlName="idade"
+                   [class.invalido]="!formGroup.controls.idade.valid"
+                   type="number" placeholder="Idade" class="input"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.alturaPessoa" formControlName="altura"
+                   [class.invalido]="!formGroup.controls.altura.valid"
+                   type="text" placeholder="Altura" class="input"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="inputAcesso">
+        <ion-input [(ngModel)]="pessoaModel.peso" formControlName="peso"
+                   [class.invalido]="!formGroup.controls.peso.valid"
+                   type="text" placeholder="Peso" class="input"></ion-input>
+      </ion-item>
+    </div>
+  </form>
   <br><br><br>
   <div align="center">
-    <button ion-button [full]="true" class="cadastro">C<span style="text-transform: lowercase">adastrar</span></button>
+    <button ion-button [full]="true" class="cadastro" (click)="cadastrar()">C<span style="text-transform: lowercase">adastrar</span>
+    </button>
   </div>
 
 </ion-content>

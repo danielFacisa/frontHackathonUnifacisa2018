@@ -17,30 +17,35 @@
   <br>
   <br>
   <div align="center">
-    <input type="number" placeholder="Quantidade" class="input" /><br>
+    <input type="number" placeholder="Quantidade" class="input" [(ngModel)]="quantidade"/><br>
 
     <ion-col col-12 class="pesquisaSelect">
-      <ion-select class="refeicaoSelect" placeholder="Refeição">
+      <ion-select class="refeicaoSelect" placeholder="Refeição" (ionChange)="adicionar()" [(ngModel)]="idFood">
+        <ion-option *ngFor="let data of listAllFood" value="{{data.id}}">{{data.description}}</ion-option>
       </ion-select>
     </ion-col>
   </div>
 
   <div align="center">
-    <ion-card align="start" class="editCard">
-      <ion-card-content style="color: #5c44d2">
-        <ion-row style="width: 100%">
-          <ion-col col-10 style="text-align: start; color: #c1c1c1">
-            Produto: <span style="color: #573ad2">Maçã Média</span><br>
-            Quantidade: <span style="color: #573ad2">1</span><br>
-            Medida: <span style="color: #573ad2">Porção de 30g</span>
-          </ion-col>
-          <ion-col col-2 style="text-align: end">
-            <img height="20" style="text-align: end" src="assets/imgs/trash.svg">
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+    <span *ngIf="listAdd.length != 0">
+      <ion-card align="start" class="editCard" *ngFor="let data of listAdd; let i = index">
+        <ion-card-content style="color: #5c44d2">
+          <ion-row style="width: 100%">
+            <ion-col col-10 style="text-align: start; color: #c1c1c1">
+              Produto: <span style="color: #573ad2">{{data.food.description}}</span><br>
+              Quantidade: <span style="color: #573ad2">{{data.quantidade}}</span><br>
+              Medida: <span style="color: #573ad2">Porção de {{data.food.base_qty}}{{data.food.base_unit}}</span>
+            </ion-col>
+            <ion-col col-2 style="text-align: end" (click)="removerObjeto(i, data)">
+              <img height="20" style="text-align: end" src="assets/imgs/trash.svg">
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </span>
+
     <br>
+
     <ion-card align="start" class="editCard">
       <ion-card-content style="color: #5c44d2">
         <ion-row style="width: 100%">
@@ -48,17 +53,21 @@
             Distribuição de Nutrientes
           </ion-col>
           <ion-col col-12 style="text-align: start">
-            <label class="inforCard"><span style="color: #ff334c">Total Calorias:</span> 320 kcal</label><br>
-            <label class="inforCard"><span style="color: #45dd86">Total Carboidratos:</span> 200</label><br>
-            <label class="inforCard"><span style="color: #f9834e">Proteinas:</span> 100</label><br>
-            <label class="inforCard"><span style="color: #2e9cff">Lipídios:</span> 100</label><br>
+            <label class="inforCard"><span style="color: #ff334c">Total Calorias:</span> {{totalCalorias}}
+              kcal</label><br>
+            <label class="inforCard"><span style="color: #45dd86">Total Carboidratos:</span>
+              {{totalCarboidratos}}</label><br>
+            <label class="inforCard"><span style="color: #f9834e">Proteinas:</span> {{totalProteinas}}</label><br>
+            <label class="inforCard"><span style="color: #2e9cff">Lipídios:</span> {{totalLipidios}}</label><br>
           </ion-col>
         </ion-row>
       </ion-card-content>
     </ion-card>
     <br>
     <div align="center">
-      <button ion-button [full]="true" style="border-radius: 10px; width: 85%; background-color: #4a33d8; height: 45px">C<span style="text-transform: lowercase">adastrar</span></button>
+      <button (click)="cadastrar()"
+              ion-button [full]="true" style="border-radius: 10px; width: 85%; background-color: #4a33d8; height: 45px">
+        C<span style="text-transform: lowercase">adastrar</span></button>
     </div>
   </div>
   <br>

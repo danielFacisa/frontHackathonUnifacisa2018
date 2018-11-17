@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
- * Generated class for the PrincipalPage page.
+ * Generated class for the ResumoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,23 +10,15 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-principal',
-  templateUrl: 'principal.html',
+  selector: 'page-resumo',
+  templateUrl: 'resumo.html',
 })
-export class PrincipalPage {
+export class ResumoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-  }
-
-  diarioAlimentar(): void {
-    this.navCtrl.push('DiarioAlimentarPage');
-  }
-
-  resumo(): void {
-    this.navCtrl.push('ResumoPage');
   }
 
 }
