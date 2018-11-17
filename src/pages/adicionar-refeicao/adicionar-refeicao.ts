@@ -19,7 +19,6 @@ export class AdicionarRefeicaoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AdicionarRefeicaoPage');
   }
 
 }

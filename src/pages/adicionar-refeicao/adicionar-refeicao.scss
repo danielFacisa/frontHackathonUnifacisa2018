@@ -1,3 +1,38 @@
 page-adicionar-refeicao {
+  .back-button.show-back-button {
+    margin-bottom: -72px;
+    display: block;
+  }
+  .input {
+    color: black;
+    border: none;
+    width: 85%;
+    height: 45px;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+  .input::-webkit-input-placeholder {
+    color: #c1c1c1;
+    padding-left: 10px;
+  }
+  ion-select {
+    max-width: 85% !important;
+    min-width: 85% !important;
+    background-color: white;
+  }
+  .refeicaoSelect{
+    width: 100% !important;
+    border-radius: 10px;
+    text-align: start;
+  }
 
+  .pesquisaSelect {
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .editCard {
+    border-radius: 15px;
+    width: 85%;
+  }
 }

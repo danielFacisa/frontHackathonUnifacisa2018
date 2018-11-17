@@ -21,4 +21,7 @@ export class DiarioAlimentarPage {
   ionViewDidLoad() {
   }
 
+  adicionarRefeicao(): void {
+    this.navCtrl.push('AdicionarRefeicaoPage');
+  }
 }

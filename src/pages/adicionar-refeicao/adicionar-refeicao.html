@@ -1,18 +1,66 @@
-<!--
-  Generated template for the AdicionarRefeicaoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>AdicionarRefeicao</ion-title>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-title style="text-align: center; margin-left: -20px">Adicionar Refeição</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="backgroundInternto">
+  <br>
+  <br>
+  <br>
+  <div align="center">
+    <input type="number" placeholder="Quantidade" class="input" /><br>
+
+    <ion-col col-12 class="pesquisaSelect">
+      <ion-select class="refeicaoSelect" placeholder="Refeição">
+      </ion-select>
+    </ion-col>
+  </div>
+
+  <div align="center">
+    <ion-card align="start" class="editCard">
+      <ion-card-content style="color: #5c44d2">
+        <ion-row style="width: 100%">
+          <ion-col col-10 style="text-align: start; color: #c1c1c1">
+            Produto: <span style="color: #573ad2">Maçã Média</span><br>
+            Quantidade: <span style="color: #573ad2">1</span><br>
+            Medida: <span style="color: #573ad2">Porção de 30g</span>
+          </ion-col>
+          <ion-col col-2 style="text-align: end">
+            <img height="20" style="text-align: end" src="assets/imgs/trash.svg">
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <br>
+    <ion-card align="start" class="editCard">
+      <ion-card-content style="color: #5c44d2">
+        <ion-row style="width: 100%">
+          <ion-col col-12 style="text-align: start; color: #573ad2; border-bottom: 1px solid #d3d3d3; font-size: 20px">
+            Distribuição de Nutrientes
+          </ion-col>
+          <ion-col col-12 style="text-align: start">
+            <label class="inforCard"><span style="color: #ff334c">Total Calorias:</span> 320 kcal</label><br>
+            <label class="inforCard"><span style="color: #45dd86">Total Carboidratos:</span> 200</label><br>
+            <label class="inforCard"><span style="color: #f9834e">Proteinas:</span> 100</label><br>
+            <label class="inforCard"><span style="color: #2e9cff">Lipídios:</span> 100</label><br>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <br>
+    <div align="center">
+      <button ion-button [full]="true" style="border-radius: 10px; width: 85%; background-color: #4a33d8; height: 45px">C<span style="text-transform: lowercase">adastrar</span></button>
+    </div>
+  </div>
+  <br>
 
 </ion-content>
