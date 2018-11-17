@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="background">
+  <div align="end">
+    <img height="170" src="assets/imgs/fruits.svg" style="position: relative">
+  </div>
+  <div class="texto">
+    ORGANIZE<br>
+    SUA<br>
+    <span style="color: white">SAÚDE</span><br>
+    ALIMENTAR<br>
+  </div>
+  <div class="nutrisim">
+    NUTRISIM 1.0
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div align="center">
+    <ion-item class="inputAcesso">
+      <ion-label>
+        <ion-icon name="ios-person-outline" class="icone"></ion-icon>
+      </ion-label>
+      <ion-input type="text" placeholder="Login" class="input"></ion-input>
+    </ion-item>
+    <ion-item class="inputAcesso">
+      <ion-label>
+        <ion-icon name="lock" class="icone"></ion-icon>
+      </ion-label>
+      <ion-input type="text" placeholder="Senha" class="input"></ion-input>
+    </ion-item>
+  </div>
+  <br>
+  <br>
+  <div align="center">
+    <button ion-button [full]="true" class="login" (click)="principal()">L<span
+      style="text-transform: lowercase">ogin</span></button>
+  </div>
+
+</ion-content>

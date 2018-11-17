@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562.29 684.8">
+  <defs>
+    <style>
+      .cls-1,.cls-7{fill:#fff;}.cls-2{fill:#d6d6d6;stroke:#5e48d2;stroke-miterlimit:10;stroke-width:23px;}.cls-3{fill:#539160;}.cls-4{fill:#5da06e;}.cls-5,.cls-8{fill:#ffbe55;}.cls-6{fill:#efaf5b;}.cls-7{font-size:105.94px;letter-spacing:-0.05em;}.cls-7,.cls-8{font-family:GothamBold,
+      Gotham Bold;}.cls-8{font-size:136.5px;}
+    </style>
+  </defs>
+  <title>logo</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path class="cls-1"
+            d="M286.79,0c-148.56,0-269,120.44-269,269s120.44,269,269,269,269-120.44,269-269S435.36,0,286.79,0Zm0,446a177,177,0,1,1,177-177A177,177,0,0,1,286.79,446Z"/>
+      <path class="cls-2" d="M286.79,492l.51,47h-.51a47,47,0,0,1,0-94Z"/>
+      <circle class="cls-1" cx="294.11" cy="491.69" r="46.31"/>
+      <path class="cls-3"
+            d="M276,178.92s-10.35-24.65-2.05-45.68,34.84-22.36,39.57-37.94c0,0-6.74,25.32-6.46,35.61C307.64,153.64,288,173.85,276,178.92Z"/>
+      <path class="cls-4" d="M284.79,176s-41,2-67-21-14-62-34-77c0,0,33,23,48,28C264.93,117,283.79,156,284.79,176Z"/>
+      <circle class="cls-5" cx="284.79" cy="280" r="109"/>
+      <path class="cls-6"
+            d="M312.79,194.53s46,82.54-46,168.91c0,0-11,20.15,25,17.28,20.92-1.67,66.3-22.67,85-63.34,13.47-29.3,13.53-70.62-21.46-113.8C355.34,203.58,314.79,164.78,312.79,194.53Z"/>
+      <text class="cls-7" transform="translate(0 662.47)">NUTRI</text>
+      <text class="cls-8" transform="translate(322.87 661.18)">sim</text>
+    </g>
+  </g>
+</svg>
