@@ -3,12 +3,6 @@ import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angula
 import {FoodProvider} from "../../providers/food/food";
 import {Observable} from "rxjs/Rx";
 
-/**
- * Generated class for the AdicionarRefeicaoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-adicionar-refeicao',
@@ -27,12 +21,17 @@ export class AdicionarRefeicaoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private foodProvider: FoodProvider,
               private alertController: AlertController) {
-  }
-
-  ionViewDidLoad() {
     this.listarFood();
   }
 
+  ionViewDidLoad() {
+  }
+
+  /**
+   * Lista todos os alimentos.
+   *
+   * @author Daniel Silva Marcelino
+   */
   listarFood(): void {
     this.foodProvider.getListAllFood().then(
       s => {
@@ -47,6 +46,11 @@ export class AdicionarRefeicaoPage {
     )
   }
 
+  /**
+   * Adiciona um item selecionado a lista e realiza a soma de propriedades específicas solicitadas.
+   *
+   * @author Daniel Silva Marcelino
+   */
   adicionar(): void {
     let listAux = [];
     for (let i = 0; i < this.listAllFood.length; i++) {
@@ -95,6 +99,16 @@ export class AdicionarRefeicaoPage {
     this.limparCampos();
   }
 
+  /**
+   *
+   * @param index
+   *      Posição do objeto no array.
+   *
+   * @param data
+   *      Objeto com todos os dados do item selecionado.
+   *
+   * @author Daniel Silva Marcelino
+   */
   removerObjeto(index, data): void {
     this.totalCalorias -= (data.quantidade * Math.trunc(data.food.attributes.energy.kcal));
     this.totalCarboidratos -= (data.quantidade * Math.trunc(data.food.attributes.carbohydrate.qty));
@@ -103,6 +117,11 @@ export class AdicionarRefeicaoPage {
     this.listAdd.splice(index, 1);
   }
 
+  /**
+   * Limpa os campos de seleção e quantidade.
+   *
+   * @author Daniel Silva Marcelino
+   */
   limparCampos(): void {
     Observable.timer(500).subscribe(
       () => {

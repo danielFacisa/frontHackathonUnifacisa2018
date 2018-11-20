@@ -1,15 +1,10 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {PessoaModel} from "../../model/PessoaModel";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ValidatorsForm} from "../../util/validatorsForm";
+import {ValidatorsForm} from "../../util/ValidatorsForm";
+import {PessoaProvider} from "../../providers/pessoa/pessoa";
 
-/**
- * Generated class for the CadastroPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-cadastro',
@@ -19,8 +14,10 @@ export class CadastroPage {
 
   pessoaModel: PessoaModel;
   formGroup: FormGroup;
+  carregando: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder,
+              private pessoaProvider: PessoaProvider, private loadingController: LoadingController, private alertController: AlertController) {
     this.pessoaModel = new PessoaModel();
     this.validacaoFormulario();
   }
@@ -28,6 +25,11 @@ export class CadastroPage {
   ionViewDidLoad() {
   }
 
+  /**
+   * Valida o formulário.
+   *
+   * @author Daniel Silva Marcelino
+   */
   validacaoFormulario(): void {
     this.formGroup = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, ValidatorsForm.nomeCompleto, Validators.maxLength(255)])],
@@ -40,9 +42,59 @@ export class CadastroPage {
     })
   }
 
+  /**
+   * Faz a chamada da requisição de cadastro de um novo usuário.
+   *
+   * @author Daniel Silva Marcelino
+   */
   cadastrar(): void {
     if (this.formGroup.valid) {
+      this.loading("Aguarde...");
+      this.pessoaProvider.postCadastroPessoa(this.pessoaModel).then(
+        sucesso => {
+          this.limparCampos();
+          this.carregando.dismiss();
+          this.navCtrl.popAll();
+        },
+        erro => {
+          this.carregando.dismiss();
+          const alerta = this.alertController.create();
+          alerta.setMessage(JSON.stringify(erro));// Implementação de teste.
+          alerta.addButton("OK");
+          alerta.present();
+          this.carregando.dismiss();
 
+        }
+      )
     }
+  }
+
+  /**
+   * Mostrar um loading com uma mensagem.
+   *
+   * @param messagem
+   *        Mensagem a ser apresentada.
+   *
+   * @author Daniel Silva Marcelino
+   */
+  loading(messagem): void {
+    this.carregando = this.loadingController.create();
+    this.carregando.setContent(messagem);
+    this.carregando.present();
+  }
+
+  /**
+   * Limpa todos os campos do formulário de cadastro.
+   *
+   * @author Daniel Silva Marcelino
+   */
+  limparCampos(): void {
+    this.pessoaModel.nomePessoa = null;
+    this.pessoaModel.emailPessoa = null;
+    this.pessoaModel.pesoPessoa = null;
+    this.pessoaModel.alturaPessoa = null;
+    this.pessoaModel.telefonePessoa = null;
+    this.pessoaModel.idadePessoa = null;
+    this.pessoaModel.senhaPessoa = null;
   }
 }

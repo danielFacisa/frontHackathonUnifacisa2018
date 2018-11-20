@@ -4,6 +4,12 @@ import {NgControl} from '@angular/forms';
 @Directive({
   selector: '[mask]'
 })
+
+/**
+ * Diretiva para mascara de campos de inserção de texto.
+ *
+ * @author Daniel Silva Marcelino
+ */
 export class Ionic2MaskDirective {
 
   @Input() mask: string;
@@ -11,8 +17,6 @@ export class Ionic2MaskDirective {
   constructor(private control: NgControl) {
   }
 
-  /*when loading dynamically data to the input, without this
-  the mask will only work on keyup event changes */
   @HostListener('change')
   ngOnChanges() {
     let value = this.control.control.value;

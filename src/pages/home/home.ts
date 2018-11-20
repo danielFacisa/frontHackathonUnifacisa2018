@@ -19,13 +19,22 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
   }
 
+  /**
+   * Abre a tela de Login.
+   *
+   * @author Daniel Silva Marcelino
+   */
   login(): void {
     this.navCtrl.push('LoginPage');
   }
 
+  /**
+   * Abre a tela de Cadastro.
+   *
+   * @author Daniel Silva Marcelino
+   */
   cadastro(): void {
     this.navCtrl.push('CadastroPage');
   }

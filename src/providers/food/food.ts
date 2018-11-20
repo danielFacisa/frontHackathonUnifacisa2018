@@ -26,4 +26,17 @@ export class FoodProvider {
     })
   }
 
+  getListAllFood1(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.httpClient.get("https://taco-food-api.herokuapp.com/api/v1/food").subscribe(
+        s => {
+          resolve(s);
+        },
+        e => {
+          reject(e);
+        }
+      )
+    })
+  }
+
 }

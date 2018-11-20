@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
-/**
- * Generated class for the PrincipalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-principal',
@@ -21,10 +14,20 @@ export class PrincipalPage {
   ionViewDidLoad() {
   }
 
+  /**
+   * Abre a tela de Diário Alimentar.
+   *
+   * @author Daniel Silva Marcelino
+   */
   diarioAlimentar(): void {
     this.navCtrl.push('DiarioAlimentarPage');
   }
 
+  /**
+   * Abre a tela de resumo.
+   *
+   * @author Daniel Silva Marcelino
+   */
   resumo(): void {
     this.navCtrl.push('ResumoPage');
   }
